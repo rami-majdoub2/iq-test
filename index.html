@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<div style="display: flex; flex-direction: column; gap: 24px">
+			<input
+				type="text"
+				name=""
+				id="url"
+				value="https://dev.seekmake.com/instant-quote/?manufacturer=qq&allowUnauthenticatedQuotes=false&embed=true&isEmbed=true&hideExampleFilesSection=true&hidePolicySection=true&hideIntroSection=false&ngsw-bypass=true"
+			/>
+
+			<button type="button" id="btn">apply</button>
+			<iframe
+				src="https://dev.seekmake.com/instant-quote/"
+				frameborder="0"
+				id="frame"
+				style="height: 100vh"
+			>
+			</iframe>
+		</div>
+		<script>
+			document.getElementById('btn').addEventListener('click', () => {
+				console.log(document.getElementById('frame').attributes.src);
+				console.log(document.getElementById('url').value);
+				document.getElementById('frame').src = document.getElementById('url').value;
+			});
+		</script>
+	</body>
+</html>
